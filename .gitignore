@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Environment file Should be ignored 
+
+.env
+.env.*
