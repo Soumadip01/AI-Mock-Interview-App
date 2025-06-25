@@ -1,10 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PublicLayout from "@/layouts/public-layouts";
 import Home from "@/routes/home";
 import Authentication from "@/layouts/auth";
