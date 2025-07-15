@@ -21,7 +21,7 @@ const AuthHandler = () => {
     useEffect(() => {
         const storeuserData = async () => {
             if (isSignedIn && user) {
-                 console.log("Storing new user:", user.id);
+                // console.log("Storing new user:", user.id);
                 setLoading(true);
                 try {
                     const userSanp = await getDoc(doc(db, "users", user.id));

@@ -6,6 +6,13 @@ import SignInPage from "@/routes/signIn";
 import SignUpPage from "@/routes/signUp";
 import ProtectedLayout from "@/layouts/protected-layouts";
 import MainLaiyout from "./layouts/main-layouts";
+import Generate from "./components/generate";
+import DashBoard from "./routes/dashboard";
+import CreateEditPage from "./routes/create_edit_page";
+import MockLoadPage from "./routes/mock_load_page";
+import MockInterviewPage from "./routes/mock_interview_page";
+import Feedback from "./routes/feedback";
+
 
 const App = () => {
   return (
@@ -29,9 +36,20 @@ const App = () => {
               <MainLaiyout />
             </ProtectedLayout>
           }
-        ></Route>
+        >
+          <Route element={<Generate />} path="/generate">
+            <Route index element={<DashBoard />} />
+            <Route path=":interviewId" element={<CreateEditPage />} />
+            <Route path="interview/:interviewId" element={<MockLoadPage />} />
+            <Route
+              path="interview/:interviewId/start"
+              element={<MockInterviewPage />}
+            />
+            <Route path="feedback/:interviewId" element={<Feedback />} />
+          </Route>
+        </Route>
       </Routes>
-    </Router>
+    </Router >
   );
 };
 
